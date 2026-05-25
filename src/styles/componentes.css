@@ -133,3 +133,13 @@
 main {
   flex: 1;
 }
+
+.linha-ornamentada {
+  position: relative;
+
+  height: 2px;
+  background-color: var(--cor-dourado-profundo);
+
+  width: 35%;
+  margin-bottom: 18px;
+}
