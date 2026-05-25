@@ -400,14 +400,7 @@ main {
   transition:
     color 0.2s ease,
     text-shadow 0.2s ease;
-}
 
-.menu-section .opcao-menu:hover,
-.menu-section .opcao-menu.ativa {
-  padding-left: 10px;
-}
-
-.menu-section .opcao-menu .opcao {
   text-decoration: none;
   color: #a89a82;
 
@@ -415,16 +408,16 @@ main {
   position: relative;
 }
 
+.menu-section .opcao-menu:hover,
 .menu-section .opcao-menu.ativa {
-  text-decoration: none;
-  color: var(--cor-dourado-destaque);
-  text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+  padding-left: 10px;
 }
 
 .menu-section .opcao-menu:hover .opcao,
 .menu-section .opcao-menu.ativa .opcao {
   color: var(--cor-dourado-destaque);
   text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
+  text-decoration: none;
 }
 
 .menu-section .opcao-menu:hover::after,
