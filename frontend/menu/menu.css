@@ -16,6 +16,51 @@
   --altura-triangulo-titulo: 4px;
 }
 
+@keyframes corteOpcao {
+  0% {
+    width: 0;
+    opacity: 1;
+  }
+
+  60% {
+    width: calc(100% + 60px);
+  }
+
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes impactoCorte {
+  0% {
+    transform: translateX(0);
+  }
+
+  30% {
+    transform: translateX(4px);
+  }
+
+  60% {
+    transform: translateX(-2px);
+  }
+
+  100% {
+    transform: translateX(0);
+  }
+}
+
+@keyframes fragmentarTexto {
+  40% {
+    letter-spacing: 4px;
+    filter: brightness(2);
+  }
+
+  100% {
+    opacity: 0;
+    letter-spacing: 8px;
+  }
+}
+
 * {
   margin: 0;
   padding: 0;
@@ -392,6 +437,7 @@ main {
     padding-left 0.2s ease,
     background 0.2 ease;
 }
+
 .menu-section > .opcao-menu:not(:last-child) {
   border-bottom: 1px solid var(--cor-dourado-profundo);
 }
@@ -406,6 +452,32 @@ main {
 
   padding-left: 20px;
   position: relative;
+}
+
+.menu-section .opcao-menu .opcao::before {
+  content: "";
+  position: absolute;
+
+  left: 10%;
+  top: 50%;
+
+  width: 0;
+  height: 3px;
+
+  background: var(--cor-dourado-profundo);
+  box-shadow: 0 0 10px var(--cor-dourado-profundo);
+}
+
+.menu-section .opcao-menu.cortando .opcao::before {
+  animation: corteOpcao 220ms ease-in-out forwards;
+}
+
+.menu-section .opcao-menu.cortando {
+  animation: impactoCorte 1.5s ease;
+}
+
+.menu-section .opcao-menu.cortando .opcao {
+  animation: fragmentarTexto 0.4s ease;
 }
 
 .menu-section .opcao-menu:hover,
