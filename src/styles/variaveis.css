@@ -1,0 +1,17 @@
+:root {
+  --cor-fundo-principal: #0b0b0f;
+  --cor-fundo-profundo: #111116;
+
+  --cor-dourado-escuro: #5a4a22;
+  --cor-dourado-principal: #b8962e;
+  --cor-dourado-suave: #8a7040;
+  --cor-dourado-profundo: #3a2e14;
+  --cor-dourado-claro: #f0e2b0;
+  --cor-dourado-destaque: #c9a84c;
+
+  --espessura-borda: 2px;
+  --deslocamento-canto-borda: -2px;
+
+  --largura-triangulo-titulo: 9px;
+  --altura-triangulo-titulo: 4px;
+}
