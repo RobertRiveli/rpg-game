@@ -263,7 +263,7 @@ main {
   flex-direction: column;
   align-items: center;
 
-  margin: 50px 0px;
+  margin: 30px 0px 50px 0px;
 
   padding: 20px;
   width: 100%;
@@ -273,7 +273,7 @@ main {
   color: var(--cor-dourado-claro);
 
   letter-spacing: 4px;
-  font-size: 58px;
+  font-size: 50px;
 }
 
 .secao-titulo .subtitulo {
@@ -363,7 +363,7 @@ main {
   flex-direction: column;
   position: relative;
   padding: 0px 10px;
-  gap: 20px;
+
   margin-left: 20px;
   border-left: 1px solid var(--cor-dourado-profundo);
 }
@@ -384,16 +384,26 @@ main {
 
 .menu-section .opcao-menu {
   margin-bottom: 0px;
-  padding-bottom: 10px;
+  padding: 15px 0px;
 
   width: 40%;
   position: relative;
+  transition:
+    padding-left 0.2s ease,
+    background 0.2 ease;
 }
 .menu-section > .opcao-menu:not(:last-child) {
   border-bottom: 1px solid var(--cor-dourado-profundo);
 }
 
-.menu-section .opcao-menu:hover {
+.menu-section .opcao-menu .opcao {
+  transition:
+    color 0.2s ease,
+    text-shadow 0.2s ease;
+}
+
+.menu-section .opcao-menu:hover,
+.menu-section .opcao-menu.ativa {
   padding-left: 10px;
 }
 
@@ -405,16 +415,20 @@ main {
   position: relative;
 }
 
-.menu-section .opcao-menu .opcao.ativa {
+.menu-section .opcao-menu.ativa {
   text-decoration: none;
   color: var(--cor-dourado-destaque);
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
 }
 
-.menu-section .opcao-menu:hover .opcao {
+.menu-section .opcao-menu:hover .opcao,
+.menu-section .opcao-menu.ativa .opcao {
   color: var(--cor-dourado-destaque);
+  text-shadow: 0 0 8px rgba(212, 175, 55, 0.5);
 }
 
-.menu-section .opcao-menu:hover::after {
+.menu-section .opcao-menu:hover::after,
+.menu-section .opcao-menu.ativa::after {
   content: "";
 
   position: absolute;
@@ -437,6 +451,28 @@ main {
     var(--cor-dourado-destaque);
 }
 
-.menu-section .opcao-menu:hover .triangulo-esquerdo {
+.menu-section .opcao-menu:hover .triangulo-esquerdo,
+.menu-section .opcao-menu.ativa .triangulo-esquerdo {
   display: block;
+}
+
+/* Remove o visual padrão da opção "NOVO JOGO" quando 
+passar o mouse em outra opção do MENU  */
+.menu-section:has(.opcao-menu:not(.ativa):hover) .opcao-menu.ativa {
+  padding-left: 0;
+}
+
+.menu-section:has(.opcao-menu:not(.ativa):hover) .opcao-menu.ativa .opcao {
+  color: #a89a82;
+  text-shadow: none;
+}
+
+.menu-section:has(.opcao-menu:not(.ativa):hover)
+  .opcao-menu.ativa
+  .triangulo-esquerdo {
+  display: none;
+}
+
+.menu-section:has(.opcao-menu:not(.ativa):hover) .opcao-menu.ativa::after {
+  display: none;
 }
