@@ -28,10 +28,50 @@ body {
 }
 
 body {
-  background-color: var(--cor-fundo-principal);
+  overflow: hidden;
+  position: relative;
+  background:
+    radial-gradient(
+      ellipse 40% 40% at 75% 25%,
+      #0d1520 0%,
+      #111a2a 30%,
+      transparent 70%
+    ),
+    #0b0b0f;
   min-height: calc(100vh - 40px);
 
   padding: 5px 40px;
+}
+
+body::before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  width: 120%;
+  height: 80px;
+  background: radial-gradient(
+    ellipse 80% 100% at 50% 100%,
+    #0d0f14 0%,
+    transparent 100%
+  );
+  border-radius: 50% 50% 0 0;
+}
+
+body::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: -10%;
+  width: 120%;
+  border-radius: 50% 50% 0 0;
+
+  height: 55px;
+  background: radial-gradient(
+    ellipse 70% 100% at 50% 100%,
+    #101218 0%,
+    transparent 100%
+  );
 }
 
 /* ====== FORMAS GEOMETRICAS ======*/
@@ -47,6 +87,100 @@ body {
   border-top: var(--altura-triangulo-titulo) solid transparent;
   border-bottom: var(--altura-triangulo-titulo) solid transparent;
   border-left: var(--largura-triangulo-titulo) solid var(--cor-dourado-profundo);
+}
+
+/* ====== ÁRVORES CENÁRIO ====== */
+
+.arvore {
+  position: absolute;
+
+  width: 80px;
+  height: 340px;
+
+  --altura-tronco: 260px;
+
+  --posicao-copa: 220px;
+}
+
+.arvore::before {
+  content: "";
+  position: absolute;
+
+  bottom: var(--posicao-copa);
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 50px;
+  height: 120px;
+
+  background: #0d0d12;
+  border-radius: 50% 50% 20% 20%;
+}
+
+.arvore::after {
+  content: "";
+  position: absolute;
+
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+
+  width: 14px;
+  height: var(--altura-tronco);
+
+  background: #0d0d12;
+}
+
+/* POSIÇÂO DAS ÁRVORES */
+
+.arvore.arvore-esquerda-1 {
+  left: -5%;
+  bottom: 2%;
+}
+
+.arvore.arvore-esquerda-2 {
+  left: -1%;
+  bottom: 2%;
+}
+
+.arvore.arvore-esquerda-3 {
+  left: 3%;
+  bottom: 2%;
+}
+
+.arvore.arvore-direita-1 {
+  right: -5%;
+  bottom: 2%;
+}
+
+.arvore.arvore-direita-2 {
+  right: -1%;
+  bottom: 2%;
+}
+
+.arvore.arvore-direita-3 {
+  right: 3%;
+  bottom: 2%;
+}
+
+/* ESTATURA DAS ÁRVORES */
+
+.arvore.arvore-esquerda-1,
+.arvore.arvore-direita-1 {
+  --altura-tronco: 320px;
+  --posicao-copa: 280px;
+}
+
+.arvore.arvore-esquerda-2,
+.arvore.arvore-direita-2 {
+  --altura-tronco: 290px;
+  --posicao-copa: 250px;
+}
+
+.arvore.arvore-esquerda-3,
+.arvore.arvore-esquerda-3 {
+  --altura-tronco: 260px;
+  --posicao-copa: 220px;
 }
 
 /* ====== BORDAS ======  */
