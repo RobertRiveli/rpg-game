@@ -277,7 +277,7 @@
     text-shadow 0.2s ease;
 
   text-decoration: none;
-  color: #a89a82;
+  color: var(--cor-opcoes-inativas);
 
   padding-left: 20px;
   position: relative;
@@ -357,7 +357,7 @@ passar o mouse em outra opção do MENU  */
 }
 
 .menu-section:has(.opcao-menu:not(.ativa):hover) .opcao-menu.ativa .opcao {
-  color: #a89a82;
+  color: var(--cor-opcoes-inativas);
   text-shadow: none;
 }
 
