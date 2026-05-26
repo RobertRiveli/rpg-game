@@ -1,0 +1,200 @@
+.tela .borda-ornamentada-secundaria {
+  overflow: visible;
+  min-width: 0;
+}
+
+.secao-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+  padding: 5px 0px 0px 0px;
+  width: 100%;
+}
+
+.titulo {
+  font-family: "El_Messiri", sans-serif;
+  letter-spacing: 4px;
+
+  font-size: 12px;
+  color: var(--cor-dourado-escuro);
+}
+
+.linhas {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  gap: 70px;
+  width: 100%;
+  position: relative;
+}
+
+.linhas .linha-ornamentada {
+  width: 25%;
+}
+
+.icone-secao-titulo {
+  width: 20%;
+}
+
+.linhas .triangulo-direito {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-170%) translateX(130%);
+  border-left: var(--largura-triangulo-titulo) solid var(--cor-dourado-escuro);
+}
+
+.linhas .triangulo-esquerdo {
+  position: absolute;
+
+  top: 50%;
+  transform: translateY(-170%) translateX(-115%);
+  border-right: var(--largura-triangulo-titulo) solid var(--cor-dourado-escuro);
+}
+
+.secao-selecionar-personagem {
+  flex: 1;
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.secao-selecionar-personagem .titulo-principal {
+  font-size: 22px;
+  font-family: "Cinzel", sans-serif;
+  letter-spacing: 4px;
+  color: var(--cor-dourado-claro);
+  width: 100%;
+  text-align: center;
+}
+
+.secao-selecionar-personagem .linhas {
+  width: 100%;
+  margin: 10px 0px;
+}
+
+.secao-selecionar-personagem .linhas .linha-ornamentada {
+  width: 40%;
+}
+
+.secao-personagens {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  max-width: 90%;
+  width: 100%;
+  min-width: 0;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+
+  padding: 5px 20px;
+  position: relative;
+
+  gap: 15px;
+}
+
+.secao-personagens .seta {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-40%);
+
+  width: 0;
+  height: 0;
+
+  border-top: 15px solid transparent;
+  border-bottom: 20px solid transparent;
+  z-index: 2;
+  cursor: pointer;
+}
+
+.secao-personagens .seta-direita {
+  right: 10px;
+
+  border-left: 20px solid var(--cor-dourado-escuro);
+}
+
+.secao-personagens .seta-esquerda {
+  left: 10px;
+
+  border-right: 20px solid var(--cor-dourado-escuro);
+}
+
+.secao-personagens .seta-direita:hover {
+  border-left: 20px solid var(--cor-dourado-destaque);
+}
+
+.secao-personagens .seta-esquerda:hover {
+  border-right: 20px solid var(--cor-dourado-destaque);
+}
+
+.secao-personagens .personagem {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
+.card {
+  width: 180px;
+  min-height: 200px;
+
+  background-color: #18181f;
+
+  border: var(--espessura-borda) solid var(--cor-dourado-profundo);
+
+  position: relative;
+}
+
+.personagem.ativo .card {
+  border: var(--espessura-borda) solid var(--cor-dourado-escuro);
+}
+
+.personagem.ativo .card {
+  border: var(--espessura-borda) solid var(--cor-dourado-escuro);
+}
+
+.personagem.ativo .classe-personagem {
+  color: var(--cor-dourado-destaque);
+}
+
+.personagem .classe-personagem {
+  font-family: "Cinzel", sans-serif;
+  padding: 10px 0px;
+  color: var(--cor-opcoes-inativas);
+  letter-spacing: 2px;
+
+  font-size: 14px;
+}
+
+.personagem.ativo .card::after {
+  content: "SELECIONADO";
+  position: absolute;
+  font-family: "Cinzel", sans-serif;
+
+  font-size: 12px;
+  text-align: center;
+  width: 100px;
+  height: 15px;
+  background-color: var(--cor-dourado-destaque);
+
+  top: -10px;
+  left: 52%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #18181f;
+  background-color: var(--cor-dourado-destaque);
+
+  z-index: 2;
+}
