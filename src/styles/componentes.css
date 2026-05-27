@@ -11,7 +11,7 @@
     #0b0b0f;
   min-height: calc(100vh - 40px);
 
-  padding: 5px 40px;
+  padding: 5px 10px;
 }
 
 .tela-fundo::before {
@@ -66,7 +66,7 @@
   position: relative;
   border: var(--espessura-borda) solid var(--cor-dourado-escuro);
 
-  min-height: calc(100vh - 40px);
+  min-height: calc(100vh - 10px);
 
   display: flex;
 }
@@ -139,7 +139,4 @@ main {
 
   height: 2px;
   background-color: var(--cor-dourado-profundo);
-
-  width: 35%;
-  margin-bottom: 18px;
 }
