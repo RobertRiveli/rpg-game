@@ -1,4 +1,4 @@
-import { criarCard } from "./componentes/componentes.js";
+import { criarCard, inicializarCarrossel } from "./componentes/componentes.js";
 import adicionarElemento from "../../utils/dom.js";
 
 const divContainer = document.querySelector(".secao-personagens");
@@ -24,9 +24,30 @@ const personagens = [
 ];
 
 function telaSelecaoPersonagem() {
+  const carrossel = document.getElementById("carrossel");
+  const trilha = document.getElementById("trilha");
+  const btnEsquerdo = document.getElementById("btn-esquerdo");
+  const btnDireito = document.getElementById("btn-direito");
+
   personagens.forEach((personagem) => {
     const card = criarCard(personagem);
-    adicionarElemento(divContainer, card);
+    adicionarElemento(trilha, card);
+  });
+
+  const carrosselPersonagens = inicializarCarrossel({
+    carrossel,
+    trilha,
+    seletorCard: ".personagem",
+  });
+
+  carrosselPersonagens.iniciar();
+
+  btnEsquerdo.addEventListener("click", () => {
+    carrosselPersonagens.voltarCard();
+  });
+
+  btnDireito.addEventListener("click", () => {
+    carrosselPersonagens.proximoCard();
   });
 }
 
