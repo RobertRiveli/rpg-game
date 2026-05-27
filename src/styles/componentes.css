@@ -1,5 +1,6 @@
 .tela-fundo {
-  overflow: hidden;
+  overflow-x: hidden;
+
   position: relative;
   background:
     radial-gradient(
