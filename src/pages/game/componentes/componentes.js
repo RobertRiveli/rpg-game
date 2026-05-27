@@ -1,4 +1,4 @@
-function criarCard(divContainer) {
+function criarCard(dados) {
   const article = document.createElement("article");
   article.classList.add("personagem");
 
@@ -6,20 +6,22 @@ function criarCard(divContainer) {
   divCard.classList.add("card");
 
   const img = document.createElement("img");
-  img.src = "../../assets/personagens/ezreal.png";
-  img.alt = "Ezreal";
+  img.src = dados.imagem;
+  img.alt = dados.nome;
 
   const h3 = document.createElement("h3");
   h3.classList.add("classe-personagem");
-  h3.textContent = "ASSASSINO";
+  h3.textContent = dados.nome;
 
   criarCantos(divCard);
-  divContainer.appendChild(article);
   article.appendChild(divCard);
   divCard.appendChild(img);
   article.appendChild(h3);
+
+  return article;
 }
 
+// Criar os cantos decorativos para o card
 function criarCantos(divCard) {
   const cantos = [
     "canto-top-esquerdo",
