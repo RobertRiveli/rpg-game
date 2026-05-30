@@ -57,6 +57,7 @@
               <span class="canto canto-inferior-esquerdo"></span>
               <span class="canto canto-inferior-direito"></span>
               <h2 class="subtitulo">Habilidade</h2>
+
               <div class="linha-ornamentada"></div>
 
               <div class="informacoes">
@@ -64,7 +65,7 @@
                   <img src="" alt="I" />
                   <div>
                     <h3 class="nome-habilidade">PASSO SILENCIOSO</h3>
-                    <p class="efeito-habilidade">Inivisível por 3 turnos</p>
+                    <p class="efeito-habilidade">Invisível por 3 turnos</p>
                   </div>
                 </div>
                 <div class="linha-habilidade">
@@ -92,13 +93,31 @@
               <div class="linha-ornamentada"></div>
 
               <div class="informacoes">
-                <div class="linha-atributo"><p>Atributo Um</p></div>
-                <div class="linha-atributo"><p>Atributo Dois</p></div>
+                <div class="linha-atributo">
+                  <p id="texto-vida" class="nome-atributo">Vida</p>
+                  <div class="container-barra">
+                    <div
+                      id="barra-vida"
+                      class="barra-atributo"
+                      data-vida="0"
+                    ></div>
+                  </div>
+                </div>
+                <div class="linha-atributo">
+                  <p id="texto-dano" class="nome-atributo">Dano</p>
+                  <div class="container-barra">
+                    <div
+                      id="barra-dano"
+                      class="barra-atributo"
+                      data-dano="99"
+                    ></div>
+                  </div>
+                </div>
               </div>
             </article>
           </section>
         </main>
-        <div class="linha-ornamentada"></div>
+        <div class="linha-ornamentada solo"></div>
 
         <div class="secao-botoes">
           <button>ESC VOLTAR</button>

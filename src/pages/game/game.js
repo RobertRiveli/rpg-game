@@ -23,6 +23,23 @@ const personagens = [
   },
 ];
 
+const atributos = ["vida", "dano"];
+
+function carregarBarraAtributos() {
+  const limiteMaximo = 100;
+
+  atributos.forEach((atributo) => {
+    const barra = document.getElementById(`barra-${atributo}`);
+    const valor = barra.dataset[atributo];
+    const larguraBarra = (valor / limiteMaximo) * 100;
+    barra.style.width = `${larguraBarra}%`;
+
+    console.log(`Valor do atributo ${atributo}: ${valor}`);
+  });
+}
+
+carregarBarraAtributos();
+
 function telaSelecaoPersonagem() {
   const carrossel = document.getElementById("carrossel");
   const trilha = document.getElementById("trilha");

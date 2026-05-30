@@ -190,7 +190,7 @@
   padding: 0px px;
   gap: 20px;
   width: 100%;
-  min-height: 250px;
+  min-height: 300px;
   width: 100%;
 }
 
@@ -231,24 +231,70 @@
 .informacao-personagem .card .linha-habilidade {
   width: 100%;
   display: flex;
+  align-items: center;
 
   gap: 10px;
 }
 
 .informacao-personagem .card .linha-habilidade img {
-  width: 40px;
-  height: 40px;
+  width: 30px;
+  height: 30px;
 }
 
 .informacao-personagem .card .linha-habilidade .nome-habilidade {
   font-size: 16px;
+
+  color: var(--cor-opcoes-inativas);
+  font-family: "Cinzel", sans-serif;
+  font-weight: 500;
+  letter-spacing: 2px;
 }
 
 .informacao-personagem .card .linha-habilidade .efeito-habilidade {
+  font-size: 12px;
+  font-family: "IM_Fell_English", sans-serif;
+  font-style: italic;
+  color: #413632;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* SEÇÃO ATRIBUTOS */
+
+.container-barra {
+  height: 10px;
+  width: 100%;
+  border-radius: 3px;
+  background-color: var(--cor-overlay);
+}
+
+.barra-atributo {
+  background-color: var(--cor-dourado-destaque);
+
+  height: 100%;
+  min-width: 0;
+  max-width: 100%;
+  transition: ease 1s;
+  border-radius: inherit;
+}
+
+.container-barra.ativo .barra-atributo {
+  width: 90%;
+}
+
+.secao-atributos .informacoes .linha-atributo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.secao-atributos .nome-atributo {
+  font-family: "Cinzel", sans-serif;
+  color: var(--cor-opcoes-inativas);
   font-size: 14px;
 }
 
-.linha-ornamentada {
+.linha-ornamentada.solo {
   margin: 20px 0px 0px 0px;
   height: 1px;
 }
