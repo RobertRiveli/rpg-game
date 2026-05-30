@@ -1,44 +1,38 @@
-import { criarCard, inicializarCarrossel } from "./componentes/componentes.js";
+import {
+  criarCard,
+  inicializarCarrossel,
+  criarLinhaHabilidade,
+} from "./componentes/componentes.js";
 import adicionarElemento from "../../utils/dom.js";
+import atributos from "../../dados/atributos.js";
+import herois from "../../classes/Heroi.js";
 
-const divContainer = document.querySelector(".secao-personagens");
-const personagens = [
-  {
-    id: 1,
-    nome: "Ezreal",
-    classe: "Assassino",
-    imagem: "../../assets/personagens/ezreal.png",
-  },
-  {
-    id: 2,
-    nome: "Ahri",
-    classe: "Mago",
-    imagem: "../../assets/personagens/ahri.png",
-  },
-  {
-    id: 3,
-    nome: "Garen",
-    classe: "Tanque",
-    imagem: "../../assets/personagens/garen.png",
-  },
-];
-
-const atributos = ["vida", "dano"];
-
-function carregarBarraAtributos() {
-  const limiteMaximo = 100;
+function carregarAtributos(personagem) {
+  const limiteMaximo = 50;
 
   atributos.forEach((atributo) => {
+    const nomeAtributo = document.getElementById(`texto-${atributo}`);
     const barra = document.getElementById(`barra-${atributo}`);
-    const valor = barra.dataset[atributo];
+    const valor = personagem[atributo];
+
     const larguraBarra = (valor / limiteMaximo) * 100;
     barra.style.width = `${larguraBarra}%`;
-
-    console.log(`Valor do atributo ${atributo}: ${valor}`);
+    nomeAtributo.textContent = `${atributo.toUpperCase()}: ${valor}`;
   });
 }
 
-carregarBarraAtributos();
+function carregarHabilidades(personagem) {
+  const habilidadesContainer = document.getElementById("habilidade");
+  habilidadesContainer.innerHTML = "";
+  personagem.retornarHabilidade().forEach((habilidade) => {
+    adicionarElemento(habilidadesContainer, criarLinhaHabilidade(habilidade));
+  });
+}
+
+function carregarDadosHeroi(heroiSelecionado) {
+  carregarAtributos(heroiSelecionado);
+  carregarHabilidades(heroiSelecionado);
+}
 
 function telaSelecaoPersonagem() {
   const carrossel = document.getElementById("carrossel");
@@ -46,7 +40,9 @@ function telaSelecaoPersonagem() {
   const btnEsquerdo = document.getElementById("btn-esquerdo");
   const btnDireito = document.getElementById("btn-direito");
 
-  personagens.forEach((personagem) => {
+  carregarDadosHeroi(herois[0]);
+
+  herois.forEach((personagem) => {
     const card = criarCard(personagem);
     adicionarElemento(trilha, card);
   });
@@ -61,10 +57,20 @@ function telaSelecaoPersonagem() {
 
   btnEsquerdo.addEventListener("click", () => {
     carrosselPersonagens.voltarCard();
+
+    const indicePersonagem = carrosselPersonagens.indiceAtual();
+    const heroiSelecionado = herois[indicePersonagem];
+
+    carregarDadosHeroi(heroiSelecionado);
   });
 
   btnDireito.addEventListener("click", () => {
     carrosselPersonagens.proximoCard();
+
+    const indicePersonagem = carrosselPersonagens.indiceAtual();
+    const heroiSelecionado = herois[indicePersonagem];
+
+    carregarDadosHeroi(heroiSelecionado);
   });
 }
 

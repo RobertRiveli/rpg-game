@@ -77,7 +77,32 @@ function inicializarCarrossel({ carrossel, trilha, seletorCard }) {
     proximoCard,
     voltarCard,
     iniciar,
+    indiceAtual: () => indiceAtual,
   };
 }
 
-export { criarCard, inicializarCarrossel };
+function criarLinhaHabilidade(habilidade) {
+  const divHabilidade = document.createElement("div");
+  divHabilidade.classList.add("linha-habilidade");
+
+  const img = document.createElement("img");
+  img.alt = habilidade.nome;
+
+  const divInfo = document.createElement("div");
+  const h3 = document.createElement("h3");
+  h3.classList.add("nome-habilidade");
+  h3.textContent = habilidade.nome;
+
+  const p = document.createElement("p");
+  p.classList.add("efeito-habilidade");
+  p.textContent = habilidade.efeito;
+
+  divInfo.appendChild(h3);
+  divInfo.appendChild(p);
+  divHabilidade.appendChild(img);
+  divHabilidade.appendChild(divInfo);
+
+  return divHabilidade;
+}
+
+export { criarCard, inicializarCarrossel, criarLinhaHabilidade };
