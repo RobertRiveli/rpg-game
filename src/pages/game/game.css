@@ -305,4 +305,70 @@
   margin-top: 20px;
   justify-content: space-between;
   padding: 0px 10px 10px 10px;
+  z-index: 1;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: "Cinzel", sans-serif;
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), transparent);
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn-primario {
+  background: linear-gradient(
+    135deg,
+    var(--cor-dourado-principal),
+    var(--cor-dourado-claro)
+  );
+  color: var(--cor-fundo-principal);
+  box-shadow: 0 2px 12px rgba(184, 150, 46, 0.35);
+  border: 1px solid var(--cor-dourado-suave);
+}
+
+.btn-primario:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(184, 150, 46, 0.5);
+}
+
+.btn-primario:active {
+  transform: translateY(0);
+}
+
+.btn-secundario {
+  background: transparent;
+  color: var(--cor-dourado-destaque);
+  border: 1px solid var(--cor-dourado-suave);
+}
+
+.btn-secundario:hover {
+  border-color: var(--cor-dourado-principal);
+  color: var(--cor-gold-light);
+  background: rgba(184, 150, 46, 0.06);
 }
