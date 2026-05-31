@@ -1,0 +1,374 @@
+.tela .borda-ornamentada-secundaria {
+  overflow: visible;
+  min-width: 0;
+}
+
+.secao-principal {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
+
+  width: 100%;
+  padding: 5px 10px 0px 10px;
+}
+
+.linhas {
+  display: flex;
+
+  justify-content: center;
+  align-items: center;
+  gap: 40px;
+  width: 100%;
+  position: relative;
+}
+
+.linhas .linha-ornamentada {
+  width: 25%;
+}
+
+.icone-secao-titulo {
+  width: 20%;
+}
+
+.secao-selecionar-personagem {
+  width: 100%;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 10px 0px 0px 0px;
+}
+
+.secao-titulo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+
+  flex: 0 0 auto;
+}
+
+.titulo-principal {
+  font-size: 22px;
+  font-family: var(--fonte-ui);
+  letter-spacing: 5px;
+  color: var(--cor-dourado-claro);
+
+  text-align: center;
+  margin: 0;
+}
+
+.secao-personagens {
+  width: 100%;
+  min-width: 0;
+
+  position: relative;
+
+  overflow-x: hidden;
+  overflow-y: hidden;
+}
+
+.secao-personagens #trilha {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  gap: 15px;
+  padding: 20px;
+
+  transition: transform 0.4s ease;
+  width: 100%;
+}
+
+.secao-personagens .seta {
+  cursor: pointer;
+  position: absolute;
+  top: 40%;
+  transform: translateY(-40%);
+
+  width: 0;
+  height: 0;
+
+  border-top: 15px solid transparent;
+  border-bottom: 20px solid transparent;
+  z-index: 2;
+}
+
+.secao-personagens .seta-direita {
+  right: 10px;
+
+  border-left: 20px solid var(--cor-dourado-escuro);
+}
+
+.secao-personagens .seta-esquerda {
+  left: 10px;
+
+  border-right: 20px solid var(--cor-dourado-escuro);
+}
+
+.secao-personagens .seta-direita:hover {
+  border-left: 20px solid var(--cor-dourado-destaque);
+}
+
+.secao-personagens .seta-esquerda:hover {
+  border-right: 20px solid var(--cor-dourado-destaque);
+}
+
+.secao-personagens .personagem {
+  flex: 0 0 auto;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+
+  transition: transform 0.7s ease;
+}
+
+.card {
+  width: 180px;
+  min-height: 200px;
+
+  background-color: #18181f;
+
+  border: var(--espessura-borda) solid var(--cor-dourado-profundo);
+
+  position: relative;
+}
+
+.personagem.ativo {
+  transform: scale(1.08);
+}
+
+.personagem.ativo .card {
+  border: var(--espessura-borda) solid var(--cor-dourado-escuro);
+}
+
+.personagem.ativo .classe-personagem {
+  color: var(--cor-dourado-destaque);
+}
+
+.personagem .classe-personagem {
+  font-family: var(--fonte-ui);
+  padding: 10px 0px;
+  color: var(--cor-texto-secundario);
+  letter-spacing: 2px;
+
+  font-size: 14px;
+}
+
+.personagem.ativo .card::after {
+  content: "SELECIONADO";
+  position: absolute;
+  font-family: var(--fonte-ui);
+
+  font-size: 12px;
+  text-align: center;
+  width: 100px;
+  height: 15px;
+  background-color: var(--cor-dourado-destaque);
+
+  top: -10px;
+  left: 51%;
+  transform: translateX(-50%);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  color: #18181f;
+
+  z-index: 2;
+}
+
+.informacao-personagem {
+  display: flex;
+  justify-content: space-around;
+
+  margin: 0 auto;
+  padding: 0px px;
+  gap: 20px;
+  width: 100%;
+  min-height: 300px;
+  width: 100%;
+}
+
+.informacao-personagem .card {
+  width: 100%;
+
+  max-width: 320px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+
+  flex-direction: column;
+}
+
+.informacao-personagem .card .subtitulo {
+  font-family: var(--fonte-ui);
+  color: var(--cor-dourado-escuro);
+  letter-spacing: 5px;
+  padding: 10px 0px 0px 0px;
+
+  font-size: 14px;
+}
+
+.informacao-personagem .card .linha-ornamentada {
+  width: 90%;
+
+  height: 1px;
+}
+
+.informacao-personagem .card .informacoes {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 0px 10px;
+}
+
+.informacao-personagem .card .linha-habilidade {
+  width: 100%;
+  display: flex;
+  align-items: center;
+
+  gap: 10px;
+}
+
+.informacao-personagem .card .linha-habilidade img {
+  width: 30px;
+  height: 30px;
+}
+
+.informacao-personagem .card .linha-habilidade .nome-habilidade {
+  font-size: 16px;
+
+  color: var(--cor-texto-secundario);
+  font-family: var(--fonte-ui);
+  font-weight: 500;
+  letter-spacing: 2px;
+}
+
+.informacao-personagem .card .linha-habilidade .efeito-habilidade {
+  font-size: 12px;
+  font-family: var(--fonte-body);
+  font-style: italic;
+  color: #413632;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+/* SEÇÃO ATRIBUTOS */
+
+.container-barra {
+  height: 10px;
+  width: 100%;
+  border-radius: 3px;
+  background-color: var(--cor-overlay);
+}
+
+.barra-atributo {
+  background-color: var(--cor-dourado-destaque);
+
+  height: 100%;
+  min-width: 0;
+  max-width: 100%;
+  transition: ease 1s;
+  border-radius: inherit;
+}
+
+.container-barra.ativo .barra-atributo {
+  width: 90%;
+}
+
+.secao-atributos .informacoes .linha-atributo {
+  display: flex;
+  flex-direction: column;
+  gap: 5px;
+}
+
+.secao-atributos .nome-atributo {
+  font-family: var(--fonte-ui);
+  color: var(--cor-texto-secundario);
+  font-size: 14px;
+}
+
+.linha-ornamentada.solo {
+  margin: 20px 0px 0px 0px;
+  height: 1px;
+}
+
+.secao-botoes {
+  width: 100%;
+  display: flex;
+  margin-top: 20px;
+  justify-content: space-between;
+  padding: 0px 10px 10px 10px;
+  z-index: 1;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  font-family: var(--fonte-ui);
+  font-size: 13px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  padding: 12px 28px;
+  cursor: pointer;
+  border: none;
+  border-radius: 2px;
+  transition: all 0.2s ease;
+  text-decoration: none;
+  font-weight: 500;
+  position: relative;
+  overflow: hidden;
+}
+
+.btn::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  transition: opacity 0.2s;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.07), transparent);
+}
+
+.btn:hover::before {
+  opacity: 1;
+}
+
+.btn-primario {
+  background: linear-gradient(
+    135deg,
+    var(--cor-dourado-principal),
+    var(--cor-dourado-claro)
+  );
+  color: var(--cor-fundo-principal);
+  box-shadow: 0 2px 12px rgba(184, 150, 46, 0.35);
+  border: 1px solid var(--cor-dourado-suave);
+}
+
+.btn-primario:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 4px 20px rgba(184, 150, 46, 0.5);
+}
+
+.btn-primario:active {
+  transform: translateY(0);
+}
+
+.btn-secundario {
+  background: transparent;
+  color: var(--cor-dourado-destaque);
+  border: 1px solid var(--cor-dourado-suave);
+}
+
+.btn-secundario:hover {
+  border-color: var(--cor-dourado-principal);
+  color: var(--cor-gold-light);
+  background: rgba(184, 150, 46, 0.06);
+}

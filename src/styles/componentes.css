@@ -1,5 +1,6 @@
 .tela-fundo {
-  overflow: hidden;
+  overflow-x: hidden;
+
   position: relative;
   background:
     radial-gradient(
@@ -11,7 +12,7 @@
     #0b0b0f;
   min-height: calc(100vh - 40px);
 
-  padding: 5px 40px;
+  padding: 5px 10px;
 }
 
 .tela-fundo::before {
@@ -66,7 +67,7 @@
   position: relative;
   border: var(--espessura-borda) solid var(--cor-dourado-escuro);
 
-  min-height: calc(100vh - 40px);
+  min-height: calc(100vh - 10px);
 
   display: flex;
 }
@@ -132,4 +133,11 @@
 
 main {
   flex: 1;
+}
+
+.linha-ornamentada {
+  position: relative;
+
+  height: 2px;
+  background-color: var(--cor-dourado-profundo);
 }

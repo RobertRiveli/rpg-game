@@ -1,5 +1,5 @@
 <!doctype html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -7,9 +7,10 @@
     <link rel="stylesheet" href="../../styles/variaveis.css" />
     <link rel="stylesheet" href="../../styles/reset.css" />
     <link rel="stylesheet" href="../../styles/componentes.css" />
+    <link rel="stylesheet" href="./game.css" />
     <title>Seleção de Personagem</title>
   </head>
-  <body class="tela-fundo">
+  <body class="tela-fundo tela ativo">
     <div class="borda-ornamentada">
       <span class="canto canto-top-esquerdo"></span>
       <span class="canto canto-top-direito"></span>
@@ -21,12 +22,96 @@
           <div class="bola-ornamentada"></div>
           <div class="bola-ornamentada"></div>
         </div>
-        <main></main>
+        <main class="secao-principal">
+          <div class="linhas">
+            <div class="linha-ornamentada"></div>
+
+            <div class="secao-titulo">
+              <svg width="25" height="20" viewBox="0 0 20 20">
+                <polygon points="10,0 15,10 10,18 6,10" fill="#8a7040" />
+              </svg>
+              <h1 class="titulo-principal">ESCOLHA SEU CAMPEÃO</h1>
+              <svg width="25" height="20" viewBox="0 0 20 20">
+                <polygon points="10,0 15,10 10,18 6,10" fill="#8a7040" />
+              </svg>
+            </div>
+
+            <div class="linha-ornamentada"></div>
+          </div>
+
+          <section class="secao-selecionar-personagem">
+            <div></div>
+
+            <div id="carrossel" class="secao-personagens">
+              <div id="btn-direito" class="seta seta-direita"></div>
+              <div id="btn-esquerdo" class="seta seta-esquerda"></div>
+
+              <div id="trilha">
+                <!-- GERADO VIA JS -->
+              </div>
+            </div>
+          </section>
+          <section class="informacao-personagem">
+            <article class="secao-habilidades card">
+              <span class="canto canto-top-esquerdo"></span>
+              <span class="canto canto-top-direito"></span>
+              <span class="canto canto-inferior-esquerdo"></span>
+              <span class="canto canto-inferior-direito"></span>
+              <h2 class="subtitulo">Habilidade</h2>
+
+              <div class="linha-ornamentada"></div>
+
+              <div id="habilidade" class="informacoes">
+                <!-- CARREGADO VIA JS -->
+              </div>
+            </article>
+            <article class="secao-atributos card">
+              <span class="canto canto-top-esquerdo"></span>
+              <span class="canto canto-top-direito"></span>
+              <span class="canto canto-inferior-esquerdo"></span>
+              <span class="canto canto-inferior-direito"></span>
+              <h2 class="subtitulo">Atributos</h2>
+              <div class="linha-ornamentada"></div>
+
+              <div class="informacoes">
+                <div class="linha-atributo">
+                  <p id="texto-vida" class="nome-atributo">Vida</p>
+                  <div class="container-barra">
+                    <div
+                      id="barra-vida"
+                      class="barra-atributo"
+                      data-vida="0"
+                    ></div>
+                  </div>
+                </div>
+                <div class="linha-atributo">
+                  <p id="texto-dano" class="nome-atributo">Dano</p>
+                  <div class="container-barra">
+                    <div
+                      id="barra-dano"
+                      class="barra-atributo"
+                      data-dano="0"
+                    ></div>
+                  </div>
+                </div>
+              </div>
+            </article>
+          </section>
+        </main>
+        <div class="linha-ornamentada solo"></div>
+
+        <div class="secao-botoes">
+          <button id="btn-voltar" class="btn btn-secundario">ESC VOLTAR</button>
+          <button id="btn-confirmar" class="btn btn-primario">CONFIRMAR</button>
+        </div>
+
         <div class="secao-bola-ornamentada">
           <div class="bola-ornamentada"></div>
           <div class="bola-ornamentada"></div>
         </div>
       </div>
     </div>
+
+    <script src="game.js" type="module"></script>
   </body>
 </html>

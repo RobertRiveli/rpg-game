@@ -1,5 +1,5 @@
 {
-  "name": "rpg",
+  "name": "rpg-game",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -9,8 +9,12 @@
   "keywords": [],
   "author": "",
   "license": "ISC",
-  "type": "commonjs",
-  "dependencies": {
-    "readline-sync": "^1.4.10"
-  }
+  "devEngines": {
+    "packageManager": {
+      "name": "pnpm",
+      "version": "^11.5.0",
+      "onFail": "download"
+    }
+  },
+  "type": "module"
 }

@@ -132,11 +132,10 @@
 }
 
 .arvore.arvore-esquerda-3,
-.arvore.arvore-esquerda-3 {
+.arvore.arvore-direita-3 {
   --altura-tronco: 260px;
   --posicao-copa: 220px;
 }
-
 /* ======   SEÇÂO TÍTULO   ====== */
 
 .secao-titulo {
@@ -174,19 +173,12 @@
   position: relative;
 }
 
-.secao-titulo .linha-secao-titulo {
-  position: relative;
-
-  height: 2px;
-  background-color: var(--cor-dourado-profundo);
-}
-
-.secao-titulo .linhas-superiores .linha-secao-titulo {
+.secao-titulo .linhas-superiores .linha-ornamentada {
   width: 35%;
   margin-bottom: 18px;
 }
 
-.secao-titulo .linhas-inferiores .linha-secao-titulo {
+.secao-titulo .linhas-inferiores .linha-ornamentada {
   width: 20%;
   margin-top: 18px;
 }
@@ -195,7 +187,7 @@
   width: 20%;
 }
 
-.secao-titulo .linha-secao-titulo.linha-superior-esquerda::after {
+.secao-titulo .linha-ornamentada.linha-superior-esquerda::after {
   content: "";
 
   position: absolute;
@@ -209,7 +201,7 @@
   border-right: var(--largura-triangulo-titulo) solid var(--cor-dourado-suave);
 }
 
-.secao-titulo .linha-secao-titulo.linha-superior-direita::after {
+.secao-titulo .linha-ornamentada.linha-superior-direita::after {
   content: "";
 
   position: absolute;
@@ -271,7 +263,7 @@
   position: relative;
   transition:
     padding-left 0.2s ease,
-    background 0.2 ease;
+    background 0.2s ease;
 }
 
 .menu-section > .opcao-menu:not(:last-child) {
@@ -284,7 +276,7 @@
     text-shadow 0.2s ease;
 
   text-decoration: none;
-  color: #a89a82;
+  color: var(--cor-texto-secundario);
 
   padding-left: 20px;
   position: relative;
@@ -364,7 +356,7 @@ passar o mouse em outra opção do MENU  */
 }
 
 .menu-section:has(.opcao-menu:not(.ativa):hover) .opcao-menu.ativa .opcao {
-  color: #a89a82;
+  color: var(--cor-texto-secundario);
   text-shadow: none;
 }
 
