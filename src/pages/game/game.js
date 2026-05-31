@@ -39,6 +39,8 @@ function telaSelecaoPersonagem() {
   const trilha = document.getElementById("trilha");
   const btnEsquerdo = document.getElementById("btn-esquerdo");
   const btnDireito = document.getElementById("btn-direito");
+  const btnConfirmar = document.getElementById("btn-confirmar");
+  const btnVoltar = document.getElementById("btn-voltar");
 
   carregarDadosHeroi(todosHerois[0]);
 
@@ -71,6 +73,19 @@ function telaSelecaoPersonagem() {
     const heroiSelecionado = todosHerois[indicePersonagem];
 
     carregarDadosHeroi(heroiSelecionado);
+  });
+
+  btnConfirmar.addEventListener("click", () => {
+    const indicePersonagem = carrosselPersonagens.indiceAtual();
+    const heroiSelecionado = criarHeroiPorId(indicePersonagem + 1);
+
+    localStorage.setItem("heroiSelecionado", JSON.stringify(heroiSelecionado));
+
+    window.location.href = "../game/game.html";
+  });
+
+  btnVoltar.addEventListener("click", () => {
+    window.location.href = "../menu/menu.html";
   });
 }
 
