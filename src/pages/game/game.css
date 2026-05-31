@@ -51,7 +51,7 @@
 
 .titulo-principal {
   font-size: 22px;
-  font-family: "Cinzel", sans-serif;
+  font-family: var(--fonte-ui);
   letter-spacing: 5px;
   color: var(--cor-dourado-claro);
 
@@ -150,9 +150,9 @@
 }
 
 .personagem .classe-personagem {
-  font-family: "Cinzel", sans-serif;
+  font-family: var(--fonte-ui);
   padding: 10px 0px;
-  color: var(--cor-opcoes-inativas);
+  color: var(--cor-texto-secundario);
   letter-spacing: 2px;
 
   font-size: 14px;
@@ -161,7 +161,7 @@
 .personagem.ativo .card::after {
   content: "SELECIONADO";
   position: absolute;
-  font-family: "Cinzel", sans-serif;
+  font-family: var(--fonte-ui);
 
   font-size: 12px;
   text-align: center;
@@ -206,7 +206,7 @@
 }
 
 .informacao-personagem .card .subtitulo {
-  font-family: "Cinzel", sans-serif;
+  font-family: var(--fonte-ui);
   color: var(--cor-dourado-escuro);
   letter-spacing: 5px;
   padding: 10px 0px 0px 0px;
@@ -244,15 +244,15 @@
 .informacao-personagem .card .linha-habilidade .nome-habilidade {
   font-size: 16px;
 
-  color: var(--cor-opcoes-inativas);
-  font-family: "Cinzel", sans-serif;
+  color: var(--cor-texto-secundario);
+  font-family: var(--fonte-ui);
   font-weight: 500;
   letter-spacing: 2px;
 }
 
 .informacao-personagem .card .linha-habilidade .efeito-habilidade {
   font-size: 12px;
-  font-family: "IM_Fell_English", sans-serif;
+  font-family: var(--fonte-body);
   font-style: italic;
   color: #413632;
   font-weight: bold;
@@ -289,8 +289,8 @@
 }
 
 .secao-atributos .nome-atributo {
-  font-family: "Cinzel", sans-serif;
-  color: var(--cor-opcoes-inativas);
+  font-family: var(--fonte-ui);
+  color: var(--cor-texto-secundario);
   font-size: 14px;
 }
 
@@ -313,7 +313,7 @@
   align-items: center;
   justify-content: center;
   gap: 8px;
-  font-family: "Cinzel", sans-serif;
+  font-family: var(--fonte-ui);
   font-size: 13px;
   letter-spacing: 2px;
   text-transform: uppercase;

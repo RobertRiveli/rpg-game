@@ -2,6 +2,7 @@
   --cor-fundo-principal: #0b0b0f;
   --cor-fundo-profundo: #111116;
   --cor-overlay: #25252f;
+
   --cor-dourado-escuro: #5a4a22;
   --cor-dourado-principal: #b8962e;
   --cor-dourado-suave: #8a7040;
@@ -9,10 +10,17 @@
   --cor-dourado-claro: #f0e2b0;
   --cor-dourado-destaque: #c9a84c;
   --cor-gold-light: #e0c87a;
-  --cor-opcoes-inativas: #a89a82;
+
   --espessura-borda: 2px;
   --deslocamento-canto-borda: -2px;
 
   --largura-triangulo-titulo: 9px;
   --altura-triangulo-titulo: 4px;
+
+  --cor-texto-secundario: #a89a82;
+
+  --fonte-display: "Cinzel_Decorative", serif;
+  --fonte-heading: "El_Messiri", sans-serif;
+  --fonte-body: "IM_Fell_English", serif;
+  --fonte-ui: "Cinzel", serif;
 }
