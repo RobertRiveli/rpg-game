@@ -1,8 +1,10 @@
 import Personagem from "./Personagem.js";
 
 class Guerreiro extends Personagem {
+  static id = 1;
+
   constructor() {
-    super("Darlan", 50, 3, 1, "Guerreiro");
+    super(Guerreiro.id, "Darlan", 50, 3, 1, "Guerreiro");
   }
 
   retornarHabilidade() {
@@ -22,8 +24,10 @@ class Guerreiro extends Personagem {
 }
 
 class Mago extends Personagem {
+  static id = 2;
+
   constructor() {
-    super("Lazar", 30, 6, 1, "Mago");
+    super(Mago.id, "Lazar", 30, 6, 1, "Mago");
   }
 
   retornarHabilidade() {
@@ -42,7 +46,4 @@ class Mago extends Personagem {
   }
 }
 
-const mago = new Mago();
-const guerreiro = new Guerreiro();
-
-export default [mago, guerreiro];
+export default { Guerreiro, Mago };

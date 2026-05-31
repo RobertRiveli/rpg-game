@@ -1,5 +1,6 @@
 class Personagem {
-  constructor(nome, vida, dano, level, classe) {
+  constructor(id, nome, vida, dano, level, classe) {
+    this.id = id;
     this.nome = nome;
     this.vida = vida;
     this.dano = dano;

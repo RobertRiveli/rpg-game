@@ -5,7 +5,7 @@ import {
 } from "./componentes/componentes.js";
 import adicionarElemento from "../../utils/dom.js";
 import atributos from "../../dados/atributos.js";
-import herois from "../../classes/Heroi.js";
+import { criarHeroiPorId, todosHerois } from "../../dados/herois.js";
 
 function carregarAtributos(personagem) {
   const limiteMaximo = 50;
@@ -40,9 +40,9 @@ function telaSelecaoPersonagem() {
   const btnEsquerdo = document.getElementById("btn-esquerdo");
   const btnDireito = document.getElementById("btn-direito");
 
-  carregarDadosHeroi(herois[0]);
+  carregarDadosHeroi(todosHerois[0]);
 
-  herois.forEach((personagem) => {
+  todosHerois.forEach((personagem) => {
     const card = criarCard(personagem);
     adicionarElemento(trilha, card);
   });
@@ -59,7 +59,7 @@ function telaSelecaoPersonagem() {
     carrosselPersonagens.voltarCard();
 
     const indicePersonagem = carrosselPersonagens.indiceAtual();
-    const heroiSelecionado = herois[indicePersonagem];
+    const heroiSelecionado = todosHerois[indicePersonagem];
 
     carregarDadosHeroi(heroiSelecionado);
   });
@@ -68,7 +68,7 @@ function telaSelecaoPersonagem() {
     carrosselPersonagens.proximoCard();
 
     const indicePersonagem = carrosselPersonagens.indiceAtual();
-    const heroiSelecionado = herois[indicePersonagem];
+    const heroiSelecionado = todosHerois[indicePersonagem];
 
     carregarDadosHeroi(heroiSelecionado);
   });
